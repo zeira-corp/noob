@@ -2,9 +2,9 @@
 
 import time
 import sys
-sys.path.insert(0, '../GrovePi/Software/Python')
+sys.path.insert(0, '../../GrovePi/Software/Python')
 import grovepi
-sys.path.insert(0, '../GrovePi/Software/Python/grove_rgb_lcd')
+sys.path.insert(0, '../../GrovePi/Software/Python/grove_rgb_lcd')
 import grove_rgb_lcd
 
 
