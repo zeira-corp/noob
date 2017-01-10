@@ -7,6 +7,31 @@ import grovepi
 sys.path.insert(0, '../../GrovePi/Software/Python/grove_rgb_lcd')
 import grove_rgb_lcd
 
+# === Led ===
+class Button:
+  def setName(self, name):
+    self.name = name
+    return self
+
+  def initialize(self, options):
+    self.name = options['name']
+    print("Initializing["+self.name+"]\n")
+    self.digitalPort = options['digitalPort']
+    self.pinMode = options['pinMode']
+    grovepi.pinMode(self.digitalPort, self.pinMode)
+    return self
+
+  def setDigitalPort(self, digitalPort):
+    self.digitalPort = digitalPort
+    return self
+
+  def setPinMode(self, mode):
+    self.pinMode = mode
+    grovepi.pinMode(self.digitalPort, self.pinMode)
+    return self
+
+  def digitalRead(self):
+    return grovepi.digitalRead(self.digitalPort)
 
 # === Led ===
 class Led:
